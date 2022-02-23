@@ -1,0 +1,198 @@
+Last login: Tue Feb 22 19:04:55 on ttys000
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git init
+Reinitialized existing Git repository in /Users/marcelszolaramin/Documents/MENTORAMA/ExerciciosGit/.git/
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ touch README.md
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git add README.md
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git commit -m "Primeiro commit"
+[develop f2069bc] Primeiro commit
+ 1 file changed, 1 insertion(+)
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git status
+On branch develop
+nothing to commit, working tree clean
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git branch branch1
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ touch meuprograma.py
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git status
+On branch develop
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	meuprograma.py
+
+nothing added to commit but untracked files present (use "git add" to track)
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git checkout branch1
+Switched to branch 'branch1'
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git add meuprograma.py
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git commit m "Segundo commit"
+error: pathspec 'm' did not match any file(s) known to git.
+error: pathspec 'Segundo commit' did not match any file(s) known to git.
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git commit -m "Segundo commit"
+[branch1 90088e0] Segundo commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 meuprograma.py
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git status
+On branch branch1
+nothing to commit, working tree clean
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git commit -am "Terceiro commit"
+[branch1 ba440cc] Terceiro commit
+ 1 file changed, 1 insertion(+)
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git status
+On branch branch1
+nothing to commit, working tree clean
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git checkout main
+error: pathspec 'main' did not match any file(s) known to git.
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git checkout master
+Switched to branch 'master'
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git merge branch1 master
+Updating 7e0dcb0..ba440cc
+Fast-forward
+ README.md      | 2 ++
+ meuprograma.py | 0
+ 2 files changed, 2 insertions(+)
+ create mode 100644 meuprograma.py
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git log
+commit ba440ccc3c4d9f696c9559c5f80dc3b5d90aead5 (HEAD -> master, branch1)
+Author: marcel <marcelszr@hotmail.com>
+Date:   Wed Feb 23 19:41:20 2022 -0300
+
+    Terceiro commit
+
+commit 90088e06d9a189a3898958e5a6d30be11ed45ea1
+Author: marcel <marcelszr@hotmail.com>
+Date:   Wed Feb 23 19:39:19 2022 -0300
+
+    Segundo commit
+
+commit f2069bc707182b9339c90abc549be2fa05bb16be (develop)
+Author: marcel <marcelszr@hotmail.com>
+Date:   Wed Feb 23 19:35:25 2022 -0300
+
+    Primeiro commit
+
+commit 7e0dcb0f2a9e1dd245dad06197d0d84ca858fdf0
+Author: marcel <marcelszr@hotmail.com>
+Date:   Tue Feb 22 19:07:14 2022 -0300
+
+    Primeiro commit
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git checkout branch1
+Switched to branch 'branch1'
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git branch branch2
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git checkout branch2
+Switched to branch 'branch2'
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git commit -am "Quarto commit"
+[branch2 c403c17] Quarto commit
+ 1 file changed, 1 insertion(+)
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git checkout branch1
+Switched to branch 'branch1'
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git branch branch3
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git checkout branch3
+Switched to branch 'branch3'
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git commit -am "Quinto commit"
+[branch3 5550fbc] Quinto commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git merge brach2 branch3 branch1
+merge: brach2 - not something we can merge
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git merge branch2 branch3 branch1
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git diff branch3 branch2
+diff --git a/README.md b/README.md
+index 87508eb..bd9df1a 100644
+--- a/README.md
++++ b/README.md
+@@ -1,2 +1,3 @@
+ Título: Exercício Módulo 5
+-Segunda alteração no arquivo - terceira alteração no arquivo
++Segunda alteração no arquivo
++Terceira alteração no arquivo
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git add
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git add .
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git commit -m "Sexto commit"
+[branch3 3305148] Sexto commit
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git merge branch2 branch3
+Already up to date.
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git checkout branch1
+Switched to branch 'branch1'
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git merge branch3 branch1
+Updating ba440cc..3305148
+Fast-forward
+ README.md | 5 +++++
+ 1 file changed, 5 insertions(+)
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git staus
+git: 'staus' is not a git command. See 'git --help'.
+
+The most similar command is
+	status
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git status
+On branch branch1
+nothing to commit, working tree clean
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git log
+commit 330514876bae1ee8354c5ba4f5723415a941c51a (HEAD -> branch1, branch3)
+Merge: 5550fbc c403c17
+Author: marcel <marcelszr@hotmail.com>
+Date:   Wed Feb 23 19:53:14 2022 -0300
+
+    Sexto commit
+
+commit 5550fbcf5a176bfa8303c27a520aa73ee012a867
+Author: marcel <marcelszr@hotmail.com>
+Date:   Wed Feb 23 19:48:51 2022 -0300
+
+    Quinto commit
+
+commit c403c17123f05500b2735f4915d4d62224e413d4 (branch2)
+Author: marcel <marcelszr@hotmail.com>
+Date:   Wed Feb 23 19:47:03 2022 -0300
+
+    Quarto commit
+
+commit ba440ccc3c4d9f696c9559c5f80dc3b5d90aead5 (master)
+Author: marcel <marcelszr@hotmail.com>
+Date:   Wed Feb 23 19:41:20 2022 -0300
+
+    Terceiro commit
+
+commit 90088e06d9a189a3898958e5a6d30be11ed45ea1
+Author: marcel <marcelszr@hotmail.com>
+Date:   Wed Feb 23 19:39:19 2022 -0300
+
+    Segundo commit
+
+commit f2069bc707182b9339c90abc549be2fa05bb16be (develop)
+Author: marcel <marcelszr@hotmail.com>
+Date:   Wed Feb 23 19:35:25 2022 -0300
+
+    Primeiro commit
+
+commit 7e0dcb0f2a9e1dd245dad06197d0d84ca858fdf0
+Author: marcel <marcelszr@hotmail.com>
+Date:   Tue Feb 22 19:07:14 2022 -0300
+
+    Primeiro commit
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git checkout master
+Switched to branch 'master'
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git merge master branch1
+Updating ba440cc..3305148
+Fast-forward
+ README.md | 5 +++++
+ 1 file changed, 5 insertions(+)
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git remote add origin https://github.com/marcelramin/CursoGit.git
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git branch -M main
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git push -u origin main
+Username for 'https://github.com': marcelramin
+Password for 'https://marcelramin@github.com': 
+remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
+fatal: Authentication failed for 'https://github.com/marcelramin/CursoGit.git/'
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git branch -M main
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git remote add origin https://github.com/marcelramin/CursoGit.git
+fatal: remote origin already exists.
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ git push -u origin main
+Username for 'https://github.com': marcelramin
+Password for 'https://marcelramin@github.com': 
+remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
+fatal: Authentication failed for 'https://github.com/marcelramin/CursoGit.git/'
+(base) Marcels-MacBook-Air:ExerciciosGit marcelszolaramin$ 
